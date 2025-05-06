@@ -7,7 +7,7 @@ Route::get('/', function () {
     return 'hello world';
 });
 
-Route::get('/pokemon', function () {
-    // this is smartly converted to json // raw response
-    return [1, 2, 3];
+Route::get('/pokemon/{name}', function (string $name) {
+    // might be dangerous
+    return sprintf("You want information on %s!", $name);
 });
